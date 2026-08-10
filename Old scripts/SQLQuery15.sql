@@ -1,0 +1,1 @@
+select * from CCS_EbankitMPS..GenericTableLanguage where tblName like '%TransferFre%'

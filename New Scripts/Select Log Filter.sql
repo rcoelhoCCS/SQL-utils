@@ -1,0 +1,1 @@
+SELECT * from [CCS_EbankitMonitoring].[dbo].LogFilter
