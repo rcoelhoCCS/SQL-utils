@@ -4,7 +4,7 @@ and machinename like 'ITSDAAS-41597'
 and [level] like 'Error' -- 'Error' | 'Debug'  | 'INFORMATION' |
 --and [Exception] like '%(0x80131904)%'
 --and [Message] like '%Invalid Connection Strings - One or more Connection strings are invalid (check errors above)%'
---and [User] like 'sterben'
+--and [User] like 'karina'
 order by EventTime desc
 
 select TOP 100 * from [CCS_EbankitMonitoring].[dbo].[LogRequestHist] 
@@ -18,9 +18,10 @@ order by EventTime desc
 
 select TOP 100 * from [CCS_EbankitMonitoring].[dbo].[ServiceRequest]
 where 1 = 1
-and [Action] like '%ServicesData%'
+--and [Action] like '%ServicesData%'
 --AND [RequestId] like 'a415c954-465f-436e-9b7a-82a34fd19086'
 --AND [SoapOut] like '%hyperlink%'
+AND [User] like 'karina'
 order by EventTime desc
 
 select TOP 100 * from [CCS_EbankitMonitoring].[dbo].[ServiceRequestHist]
@@ -31,17 +32,19 @@ select TOP 100 * from [CCS_EbankitMonitoring].[dbo].[JsonRequest]
 where 1 = 1
 --AND [RequestPath] like '%Content%'
 --and RequestPath like '/Services/Ebankit/EbankitCustomService.svc'
-AND RequestUrl like '%Subscription%'
-AND [User] like 'voxdei'
+AND RequestUrl like '%/ContentService/Content%'
+--AND [User] like 'voxdei'
+--AND SoapOut like '%.svg%'
 order by EventTime desc
 
 select TOP 100 * from [CCS_EbankitMonitoring].[dbo].[JsonRequestHist]
 where 1= 1 
 --AND [RequestPath] like '%.svc%'
-AND [RequestUrl] like '%document%'
-AND [User] like 'voxpopuli'
+AND [RequestUrl] like '%/ContentService/Content%'
+--AND [User] like 'voxpopuli'
 --AND [Application] like 'INTERNETBANKING'
 --AND SoapIn like '%FrontChequeImage%'
+AND SoapOut like '%.svg%'
 order by EventTime desc
 
 select TOP 100 * from [CCS_EbankitMonitoring].[dbo].[TransactionExecution]

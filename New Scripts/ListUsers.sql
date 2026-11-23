@@ -42,9 +42,9 @@ FROM ccs_ebankitsecuritycenter..tb_customer_user u
  left outer join ccs_ebankitsecuritycenter..tb_global_user_email ue on u.user_id= ue.user_id
  left outer join ccs_ebankitsecuritycenter..tb_email_validation e on e.emailvalue_id = ue.emailvalue_id
  where 1 = 1
---and a.aliasvalue like '%alastor%'
+--and a.aliasvalue like '%hanscapon%'
 --and pan.extendedPropertyValue = '27395251'
---and profile.extendedPropertyValue = '40840863'
+--and profile.extendedPropertyValue = '40880341'
 --and retail.extendedPropertyValue = '611798'
 --and contract_id = 6253
 and c.contractStatus_Id = 2
